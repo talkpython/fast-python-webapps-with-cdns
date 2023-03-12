@@ -12,9 +12,9 @@ class FeedViewModel(ViewModelBase):
         self.page_size = page_size
         self.page = page
 
-        all_videos = video_service.all_videos()
+        count = video_service.video_count()
         start = (page - 1) * page_size
         end = start + page_size
 
-        self.videos: List[Video] = all_videos[start:end]
-        self.has_more_videos = len(all_videos) > end
+        self.videos: List[Video] = video_service.all_videos(page, page_size)
+        self.has_more_videos = count > end

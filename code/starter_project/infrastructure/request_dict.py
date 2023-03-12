@@ -14,7 +14,7 @@ class RequestDictionary(dict):
 def create(default_val=None, **route_args) -> RequestDictionary:
     request = flask.request
 
-    # Adding this retro actively. Some folks are experiencing issues where they
+    # Adding this retroactively. Some folks are experiencing issues where they
     # are getting a list rather than plain dict. I think it's from multiple
     # entries in the multidict. This should fix it.
     args = request.args

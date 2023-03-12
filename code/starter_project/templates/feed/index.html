@@ -8,7 +8,8 @@
         {{ render_partial('feed/partials/video_list.html',
                 videos=videos,
                 page=1,
-                has_more_videos=has_more_videos) }}
+                has_more_videos=has_more_videos,
+                build_cache_id=build_cache_id) }}
 
     </div>
 

@@ -3,7 +3,7 @@
     <div class="video">
         <div><span class="title">{{ v.title }}</span></div>
         <a href="/videos/play/{{ v.id }}">
-            {{ render_partial('shared/partials/_video_image.html', video=v) }}
+            {{ render_partial('shared/partials/_video_image.html', video=v, build_cache_id=build_cache_id) }}
         </a>
     </div>
 
