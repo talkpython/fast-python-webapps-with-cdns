@@ -1,6 +1,6 @@
 from typing import Optional
 
-from models.video_model import Video
+from db.video_entity import Video
 from services import video_service
 from viewmodels.shared.viewmodelbase import ViewModelBase
 
