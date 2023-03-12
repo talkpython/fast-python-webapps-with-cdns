@@ -1,8 +1,13 @@
 {% extends "shared/_layout.html" %}
 {% block main_content %}
 
+    {# TODO: CDN #}
+    {# TODO: Beware of caching #}
+    {# for later :) #}
+    {# {{"/static/img/categories/"++"?cache_id="+ build_cache_id("/static/img/categories/"+category.image) }}#}
+
     <div class="hero category-details"
-         style="background: url(https://video-collector-demo-v1.b-cdn.net{{ "/static/img/categories/"+category.image+"?cache_id="+ build_cache_id("/static/img/categories/"+category.image) }}) no-repeat center center; background-size: cover;">
+         style="background: url('/static/img/categories/{{ category.image }}') no-repeat center center; background-size: cover;">
         <div class="hero-inner">
             <h1>{{ category.title }}</h1>
         </div>
