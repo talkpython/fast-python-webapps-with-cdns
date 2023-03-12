@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from typing import List, Dict, Optional
 
-from models.category_model import Category
-from models.video_model import Video
+from import_models.category_model import Category
+from import_models.video_model import Video
 
 __categories: Dict['str', Category] = {}
 __all_videos_list: List[Video] = []

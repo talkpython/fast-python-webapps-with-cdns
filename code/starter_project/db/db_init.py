@@ -7,7 +7,7 @@ from sqlmodel import create_engine, SQLModel, Session, select
 from db import video_entity, category_entity
 from db.category_entity import Category, VideosToCategories
 from db.video_entity import Video
-from models.category_model import Category as JsonCategory
+from import_models.category_model import Category as JsonCategory
 from services import json_video_service
 
 has_initialized = False
