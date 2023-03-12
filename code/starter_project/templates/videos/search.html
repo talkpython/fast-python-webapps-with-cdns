@@ -19,7 +19,7 @@
     <div class="videos search-results" id="search-results">
 
         {% if search_text %}
-            {{  render_partial('videos/partials/search_results.html', videos=videos) }}
+            {{  render_partial('videos/partials/search_results.html', videos=videos, build_cache_id=build_cache_id) }}
         {% endif %}
 
     </div>

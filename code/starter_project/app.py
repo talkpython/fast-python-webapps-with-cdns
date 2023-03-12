@@ -1,15 +1,12 @@
-import datetime
 import sys
 
 import flask
 import jinja_partials
-from flask import Response
 
 from db import db_init
 from services import json_video_service
 
 app = flask.Flask("app")
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = int(datetime.timedelta(days=31).total_seconds())
 
 
 def configure():
@@ -51,13 +48,6 @@ def setup_db():
     json_video_service.load_data()
     db_init.init()
     db_init.ensure_data()
-
-
-@app.after_request
-def add_caching_header(response: Response):
-    # print(f"REQUEST FROM: {response.}")
-    # response.cache_control.max_age = 300
-    return response
 
 
 if __name__ == '__main__':

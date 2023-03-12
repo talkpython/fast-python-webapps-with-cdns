@@ -1,8 +1,8 @@
-{#<img src="https://img.youtube.com/vi/{{ video.id }}/maxresdefault.jpg"#}
-{#     class="img img-responsive {{ ' '.join(classes) }}"#}
-{#     alt="{{ video.title }}"#}
-{#     title="{{ video.title }}">#}
-<img src="https://video-collector-demo-v1.b-cdn.net/static/thumbnails/{{ video.id }}.jpg?cache_id={{ build_cache_id("/static/thumbnails/"+ video.id+".jpg") }}
+{#TODO: CDN#}
+{#TODO: Beware of caching#}
+{# For later :) #}
+{# ?cache_id={{ build_cache_id("/static/thumbnails/"+ video.id+".jpg") #}
+<img src="/static/thumbnails/{{ video.id }}.jpg }}"
      class="img img-responsive {{ ' '.join(classes) }}"
      alt="{{ video.title }}"
      title="{{ video.title }}">

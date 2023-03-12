@@ -6,7 +6,7 @@
             <div class="col-md-2"></div>
             <div class="video search-result col-md-3">
                 <a href="/videos/play/{{ v.id }}"
-                >{{ render_partial('shared/partials/_video_image.html', video=v) }}</a>
+                >{{ render_partial('shared/partials/_video_image.html', video=v, build_cache_id=build_cache_id) }}</a>
             </div>
             <div class="video search-result col-md-6">
                 <div><a href="/videos/play/{{ v.id }}" class="title">{{ v.title }}</a></div>

@@ -11,9 +11,6 @@ file_hashes = {}
 
 
 def build_cache_id(resource_file: str) -> str:
-    if not resource_file:
-        return "ERROR_NO_FILE_PROVIDED"
-
     return cache_buster.build_cache_id(resource_file, False, file_hashes, root_folder.as_posix(), True)
 
 

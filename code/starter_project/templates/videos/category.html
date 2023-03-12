@@ -21,7 +21,6 @@
                             <a href="/videos/play/{{ v.id }}"
                             >
                                 {% if v.has_thumbnail %}
-
                                     {{ render_partial('shared/partials/_video_image.html', video=v, build_cache_id=build_cache_id) }}
                                 {% else %}
                                     <img src="https://img.youtube.com/vi/{{ v.id }}/maxresdefault.jpg"

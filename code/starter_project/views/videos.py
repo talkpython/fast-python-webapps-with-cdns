@@ -2,6 +2,7 @@ import flask
 
 from infrastructure.view_modifiers import response
 from services import video_service
+from viewmodels.shared import viewmodelbase
 from viewmodels.videos.add_video_viewmodel import AddVideoViewModel
 from viewmodels.videos.category_viewmodel import CategoryViewModel
 from viewmodels.videos.play_viewmodel import PlayViewModel
@@ -54,7 +55,9 @@ def search():
     vm = SearchViewModel()
     print(f"Searching for {vm.search_text}")
     if vm.is_htmx_request:
-        html = flask.render_template('videos/partials/search_results.html', videos=vm.videos)
+        html = flask.render_template('videos/partials/search_results.html',
+                                     videos=vm.videos,
+                                     build_cache_id=viewmodelbase.build_cache_id)
         return flask.make_response(html)
 
     return vm.to_dict()

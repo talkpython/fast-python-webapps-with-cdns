@@ -4,7 +4,7 @@ import os
 
 def build_cache_id(filename: str, dev_mode: bool, file_hashes: dict, folder_path: str, log_hash_operations: bool):
     if not filename:
-        return "ERROR_NO_FILE"
+        return "ERROR_NO_FILE_PROVIDED"
 
     file_lw = filename.strip().lower()
     if not dev_mode and file_lw in file_hashes:
