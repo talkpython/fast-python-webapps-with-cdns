@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Video Collector - HTMX Demo App{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Demo app for CDN course/talk showing how to integrate CDNs with Flask by Michael Kennedy">
+
+    <link rel="preconnect" href="https://video-collector-demo-v1.b-cdn.net">
+
+    <link rel="stylesheet"
+          href="https://fonts.bunny.net/css?family=Source+Sans+Pro:400">
+
+    <link rel="stylesheet" href="https://video-collector-demo-v1.b-cdn.net/static/css/bootstrap-4-6-0.min.css?cache_id={{ build_cache_id("/static/css/bootstrap-4-6-0.min.css")}}"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://video-collector-demo-v1.b-cdn.net/static/fontawesome-free/css/all.min.css?cache_id={{ build_cache_id("/static/fontawesome-free/css/all.min.css")}}"/>
+
+    <link rel="stylesheet" href="https://video-collector-demo-v1.b-cdn.net/static/css/site.css?cache_id={{ build_cache_id("/static/css/site.css")}}"/>
+    <link rel="stylesheet" href="https://video-collector-demo-v1.b-cdn.net/static/css/animations.css?cache_id={{ build_cache_id("/static/css/animations.css")}}"/>
+
+    {% block additional_css %}{% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-toggleable-md navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Video Collector <i class="fas fa-video"></i></a>
+
+    <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar-toggler-icon">
+            <div class="nav-expand-line"></div>
+            <div class="nav-expand-line"></div>
+            <div class="nav-expand-line"></div>
+        </div>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/feed" title="See all our videos."
+            ><i class="fas fa-list"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="/videos/search" title="Search our video collection."
+            ><i class="fas fa-search"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="main_content">
+    {% block main_content %}{% endblock %}
+</div>
+
+<footer>
+    <div class="copyright">
+        This is a demo site built during a course.<br>
+        It's a cool example of using <a href="https://htmx.org" target="_blank">HTMX</a> and <a
+            href="https://talkpython.fm/bunnycdn-partner" target="_blank">CDNs</a>.<br>
+        <br>
+        Copyright &copy; <a href="https://training.talkpython.fm" target="_blank">Talk Python Training</a>.
+    </div>
+</footer>
+
+
+<script src="https://video-collector-demo-v1.b-cdn.net/static/js/htmx.min.js?cache_id={{ build_cache_id("/static/js/htmx.min.js")}}"></script>
+
+<script src="https://video-collector-demo-v1.b-cdn.net/static/js/jquery-3.5.1.slim.min.js?cache_id={{ build_cache_id("/static/js/jquery-3.5.1.slim.min.js")}}"></script>
+<script src="https://video-collector-demo-v1.b-cdn.net/static/js/popper-1.16.1.min.js?cache_id={{ build_cache_id("/static/js/popper-1.16.1.min.js")}}"></script>
+<script src="https://video-collector-demo-v1.b-cdn.net/static/js/bootstrap-4.6.1.min.js?cache_id={{ build_cache_id("/static/js/bootstrap-4.6.1.min.js")}}"></script>
+
+
+{% block additional_js %}{% endblock %}
+
+</body>
+</html>
