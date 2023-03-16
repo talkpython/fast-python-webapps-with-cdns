@@ -22,7 +22,7 @@
                 {% for c in row %}
                     <div class="col-md-3 category">
                         <a href="/videos/category/{{ c.id }}"
-                        ><img src="/static/img/categories/{{ c.image }}"
+                        ><img src="https://video-collector.b-cdn.net/static/img/categories/{{ c.image }}"
                               class="img img-responsive" alt="Video category {{ c.title }}"></a>
                         <div><span class="title">{{ c.title }}</span> ({{ len(c.videos) }})</div>
                     </div>
