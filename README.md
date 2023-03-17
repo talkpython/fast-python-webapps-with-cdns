@@ -10,5 +10,5 @@ required for the demo app to work (but a few video plays will fail without them)
 
 [
 self-hosted-videos.zip](
-self-hosted-videos.zip)
+https://talk-python-shared.nyc3.digitaloceanspaces.com/self-hosted-videos.zip)
 
