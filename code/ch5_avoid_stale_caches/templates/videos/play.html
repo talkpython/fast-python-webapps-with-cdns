@@ -6,7 +6,7 @@
             <div style="text-align: center; background-color: black;">
                 <video autoplay controls preload="auto"
                        style="width: 100%;"
-                       poster="https://video-collector.b-cdn.net/static/thumbnails/{{ video.id }}.jpg">
+                       poster="https://video-collector.b-cdn.net/static/thumbnails/{{ video.id }}.jpg?cache_id={{ build_cache_id('/static/thumbnails/'+video.id + '.jpg') }}">
                     <source
                             src="https://video-collector-ugc.b-cdn.net/self-hosted-videos/{{ video.id }}.mp4"
                             type="video/mp4">
