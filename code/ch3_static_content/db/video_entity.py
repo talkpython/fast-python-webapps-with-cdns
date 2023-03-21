@@ -10,3 +10,4 @@ class Video(SQLModel, table=True):
     author: str = Field(nullable=False)
     views: int = Field(default=0, index=True)
     has_thumbnail: bool = Field(default=False)
+    self_hosted: bool = Field(default=False)

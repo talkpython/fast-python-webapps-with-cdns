@@ -51,6 +51,7 @@ def ensure_data():
             return
 
         print("Importing data to new SQLite DB...", flush=True)
+        hosted_ids = {'PnxlHfGdihI', 'QltSJUlHbpw', 'cfrUF-UGehk', '4wjqsPtj2QY', 'rDYKZG6Fn8o'}
         added_videos = set()
         for json_cat in categories:
             name = json_cat.category.strip()
@@ -65,7 +66,8 @@ def ensure_data():
                                   url=json_vid.url,
                                   author=json_vid.author,
                                   views=json_vid.views,
-                                  has_thumbnail=True)
+                                  has_thumbnail=True,
+                                  self_hosted=json_vid.id in hosted_ids)
                     session.add(video)
 
                 video_to_category = VideosToCategories(video_id=json_vid.id, category_id=cat.id)
