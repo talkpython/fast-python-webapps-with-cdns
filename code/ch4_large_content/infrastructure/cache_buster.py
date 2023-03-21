@@ -1,8 +1,10 @@
 import hashlib
 import os
 
+file_hashes = {}
 
-def build_cache_id(filename: str, dev_mode: bool, file_hashes: dict, folder_path: str, log_hash_operations: bool):
+
+def build_cache_id(filename: str, dev_mode: bool, folder_path: str, log_hash_operations: bool):
     if not filename:
         return "ERROR_NO_FILE_PROVIDED"
 
@@ -13,8 +15,7 @@ def build_cache_id(filename: str, dev_mode: bool, file_hashes: dict, folder_path
     if log_hash_operations:
         print("Building new hash for " + file_lw)
 
-    fullname = os.path.abspath(os.path.join(
-        folder_path, filename.lstrip('/')))
+    fullname = os.path.abspath(os.path.join(folder_path, filename.lstrip('/')))
 
     if not os.path.exists(fullname):
         if log_hash_operations:

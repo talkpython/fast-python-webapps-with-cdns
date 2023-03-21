@@ -7,11 +7,10 @@ from flask import Request
 from infrastructure import request_dict, cache_buster
 
 root_folder = Path(__file__).parent.parent.parent
-file_hashes = {}
 
 
 def build_cache_id(resource_file: str) -> str:
-    return cache_buster.build_cache_id(resource_file, False, file_hashes, root_folder.as_posix(), True)
+    return cache_buster.build_cache_id(resource_file, False, root_folder.as_posix(), True)
 
 
 class ViewModelBase:

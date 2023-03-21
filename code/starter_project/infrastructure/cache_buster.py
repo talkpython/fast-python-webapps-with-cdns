@@ -1,8 +1,10 @@
 import hashlib
 import os
 
+file_hashes = {}
 
-def build_cache_id(filename: str, dev_mode: bool, file_hashes: dict, folder_path: str, log_hash_operations: bool):
+
+def build_cache_id(filename: str, dev_mode: bool, folder_path: str, log_hash_operations: bool):
     if not filename:
         return "ERROR_NO_FILE_PROVIDED"
 
