@@ -7,6 +7,7 @@ from flask import Request
 from infrastructure import request_dict, cache_buster
 
 root_folder = Path(__file__).parent.parent.parent
+use_cdn = True
 
 
 def build_cache_id(resource_file: str) -> str:
@@ -22,6 +23,7 @@ class ViewModelBase:
         self.error: Optional[str] = None
         self.view_model = self.to_dict()
         self.build_cache_id = build_cache_id
+        self.cdn_prefix = '' if not use_cdn else 'https://video-collector.b-cdn.net'
 
     def to_dict(self):
         return self.__dict__

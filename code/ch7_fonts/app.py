@@ -5,12 +5,16 @@ import jinja_partials
 
 from db import db_init
 from services import json_video_service
+from viewmodels.shared import viewmodelbase
 
 app = flask.Flask("app")
 
 
 def configure():
     print("Configuring Flask app:")
+
+    register_cdn()
+    print("Registered CDN")
 
     register_template_ops()
     print("Registered template helpers")
@@ -21,6 +25,12 @@ def configure():
     setup_db()
     print("DB setup completed.")
     print("", flush=True)
+
+
+def register_cdn():
+    # Swap this over to run locally
+    is_prod = True
+    viewmodelbase.use_cdn = is_prod
 
 
 def register_template_ops():

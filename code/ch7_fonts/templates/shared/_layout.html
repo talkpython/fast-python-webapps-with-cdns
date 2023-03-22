@@ -7,18 +7,18 @@
     <meta name="description"
           content="Demo app for CDN course/talk showing how to integrate CDNs with Flask by Michael Kennedy">
 
-    <link rel="preconnect" href="https://video-collector.b-cdn.net" />
+    <link rel="preconnect" href="{{ cdn_prefix }}" />
 
     {# TODO: fonts #}
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400">
 
-    <link rel="stylesheet" href="https://video-collector.b-cdn.net/static/css/bootstrap-4-6-0.min.css?cache_id={{ build_cache_id("/static/css/bootstrap-4-6-0.min.css")}}"
+    <link rel="stylesheet" href="{{ cdn_prefix }}/static/css/bootstrap-4-6-0.min.css?cache_id={{ build_cache_id("/static/css/bootstrap-4-6-0.min.css")}}"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://video-collector.b-cdn.net/static/fontawesome-free/css/all.min.css?cache_id={{ build_cache_id("/static/fontawesome-free/css/all.min.css")}}"/>
+    <link rel="stylesheet" href="{{ cdn_prefix }}/static/fontawesome-free/css/all.min.css?cache_id={{ build_cache_id("/static/fontawesome-free/css/all.min.css")}}"/>
 
-    <link rel="stylesheet" href="https://video-collector.b-cdn.net/static/css/site.css?cache_id={{ build_cache_id("/static/css/site.css")}}"/>
-    <link rel="stylesheet" href="https://video-collector.b-cdn.net/static/css/animations.css?cache_id={{ build_cache_id("/static/css/animations.css")}}"/>
+    <link rel="stylesheet" href="{{ cdn_prefix }}/static/css/site.css?cache_id={{ build_cache_id("/static/css/site.css")}}"/>
+    <link rel="stylesheet" href="{{ cdn_prefix }}/static/css/animations.css?cache_id={{ build_cache_id("/static/css/animations.css")}}"/>
 
     {% block additional_css %}{% endblock %}
 </head>
@@ -61,11 +61,11 @@
     </div>
 </footer>
 
-<script src="https://video-collector.b-cdn.net/static/js/htmx.min.js?cache_id={{ build_cache_id("/static/js/htmx.min.js")}}"></script>
+<script src="{{ cdn_prefix }}/static/js/htmx.min.js?cache_id={{ build_cache_id("/static/js/htmx.min.js")}}"></script>
 
-<script src="https://video-collector.b-cdn.net/static/js/jquery-3.5.1.slim.min.js?cache_id={{ build_cache_id("/static/js/jquery-3.5.1.slim.min.js")}}"></script>
-<script src="https://video-collector.b-cdn.net/static/js/popper-1.16.1.min.js?cache_id={{ build_cache_id("/static/js/popper-1.16.1.min.js")}}"></script>
-<script src="https://video-collector.b-cdn.net/static/js/bootstrap-4.6.1.min.js?cache_id={{ build_cache_id("/static/js/bootstrap-4.6.1.min.js")}}"></script>
+<script src="{{ cdn_prefix }}/static/js/jquery-3.5.1.slim.min.js?cache_id={{ build_cache_id("/static/js/jquery-3.5.1.slim.min.js")}}"></script>
+<script src="{{ cdn_prefix }}/static/js/popper-1.16.1.min.js?cache_id={{ build_cache_id("/static/js/popper-1.16.1.min.js")}}"></script>
+<script src="{{ cdn_prefix }}/static/js/bootstrap-4.6.1.min.js?cache_id={{ build_cache_id("/static/js/bootstrap-4.6.1.min.js")}}"></script>
 
 
 {% block additional_js %}{% endblock %}
