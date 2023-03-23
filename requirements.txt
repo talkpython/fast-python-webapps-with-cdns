@@ -24,7 +24,7 @@ markupsafe==2.1.2
     #   werkzeug
 more-itertools==9.1.0
     # via -r requirements.in
-pydantic==1.10.6
+pydantic==1.10.7
     # via
     #   -r requirements.in
     #   sqlmodel
