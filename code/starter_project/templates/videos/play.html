@@ -2,25 +2,12 @@
 {% block main_content %}
 
     <div class="video-player">
-        {% if video.self_hosted %}
-            <div style="text-align: center; background-color: black;">
-                <video autoplay controls preload="auto"
-                       style="width: 100%;"
-                       poster="{{ cdn_prefix }}/static/thumbnails/{{ video.id }}.jpg?cache_id={{ build_cache_id('/static/thumbnails/'+video.id + '.jpg') }}">
-                    <source
-                            src="https://video-collector-ugc.b-cdn.net/self-hosted-videos/{{ video.id }}.mp4"
-                            type="video/mp4">
-                    <div>Sorry but it seems your browser doesn't support any of our formats.</div>
-                </video>
-            </div>
-        {% else %}
-            <iframe width="100%" height="700"
-                    src="https://www.youtube.com/embed/{{ video.id }}?autoplay=1&modestbranding=1"
-                    title="{{ video.title }}"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
-                    allowfullscreen></iframe>
-        {% endif %}
+        <iframe width="100%" height="700"
+                src="https://www.youtube.com/embed/{{ video.id }}?autoplay=1&modestbranding=1"
+                title="{{ video.title }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
+                allowfullscreen></iframe>
     </div>
 
 {% endblock %}
